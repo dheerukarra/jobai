@@ -1,0 +1,30 @@
+{
+  "updated": "2026-11-04T00:00:00Z",
+  "project": "JobAi",
+  "sprint": {"name": "Sprint 1", "goal": "Foundation, tooling and project dashboard, then discovery (WP1)", "start": "2026-11-03"},
+  "usage": {
+    "weekly_pct": 5,
+    "weekly_cap_plan_pct": 40,
+    "weekly_cap_hard_pct": 50,
+    "five_hour_pct": 36,
+    "weekly_resets": "2026-11-08T10:59:59Z",
+    "five_hour_resets": "2026-11-04T01:59:59Z",
+    "openai_balance_usd": 9.79,
+    "openai_spent_usd": 0.000254
+  },
+  "agents": [
+    {"id": "chief-of-staff", "name": "Chief of Staff (main session)", "role": "Chief of Staff", "model": "sonnet-5.5", "ticket": "—", "status": "running", "note": "Runs rounds, usage gate, ledger, verification"},
+    {"id": "backend-ic", "name": "backend-ic", "role": "Backend IC", "model": "sonnet", "ticket": "WP0", "status": "done", "note": "Built foundation: 29 tests"},
+    {"id": "platform-em", "name": "platform-em", "role": "Platform EM", "model": "haiku", "ticket": "WP0", "status": "done", "note": "Review: approve-with-fixes, 7 P1"},
+    {"id": "backend-ic-fixes", "name": "backend-ic-fixes", "role": "Backend IC", "model": "sonnet", "ticket": "WP0", "status": "done", "note": "Fixed P1s: 44 tests"},
+    {"id": "web-ic", "name": "web-ic", "role": "Web IC", "model": "sonnet", "ticket": "OFF-1", "status": "done", "note": "Built this dashboard: 54 tests total"}
+  ],
+  "owner_blockers": [
+    {"item": "Restart Claude so claude-mem hooks start capturing memory", "needed_by": "now", "status": "open"},
+    {"item": "ntfy topic", "needed_by": "WP5", "status": "open"},
+    {"item": "Master resume (RenderCV YAML), answers bank, target companies, filters", "needed_by": "WP2/WP3", "status": "open"},
+    {"item": "Oracle Cloud account (Hetzner fallback)", "needed_by": "WP6", "status": "open"},
+    {"item": "Which ATS go live and daily cap", "needed_by": "end of WP7", "status": "open"},
+    {"item": "OpenAI API key", "needed_by": "WP2", "status": "done"}
+  ]
+}

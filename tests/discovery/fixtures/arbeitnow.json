@@ -1,0 +1,60 @@
+{
+ "data": [
+  {
+   "slug": "senior-data-analyst-crm-munich-231256",
+   "company_name": "Flix",
+   "title": "Senior Data Analyst - CRM (m/f/d)",
+   "description": "<p style=\"line-height: 1.4;\"><span style=\"font-size: 12pt;\">At Flix, we offer a dynamic work environment with competitive pay, strong growth opportunities, and a tech-driven approach to making travel more accessible, sustainable, and affordable. &nbsp;</span></p>\n<p style=\"line-height: 1.4;\"><span s",
+   "remote": false,
+   "url": "https://www.arbeitnow.com/jobs/companies/flix/senior-data-analyst-crm-munich-231256",
+   "tags": [],
+   "job_types": [],
+   "location": "Munich, Bavaria, Germany",
+   "created_at": 1793742325
+  },
+  {
+   "slug": "senior-data-analyst-crm-berlin-44970",
+   "company_name": "Flix",
+   "title": "Senior Data Analyst - CRM (m/f/d)",
+   "description": "<p style=\"line-height: 1.4;\"><span style=\"font-size: 12pt;\">At Flix, we offer a dynamic work environment with competitive pay, strong growth opportunities, and a tech-driven approach to making travel more accessible, sustainable, and affordable. &nbsp;</span></p>\n<p style=\"line-height: 1.4;\"><span s",
+   "remote": false,
+   "url": "https://www.arbeitnow.com/jobs/companies/flix/senior-data-analyst-crm-berlin-44970",
+   "tags": [],
+   "job_types": [],
+   "location": "Berlin, Berlin, Germany",
+   "created_at": 1793742325
+  },
+  {
+   "slug": "machine-learning-data-scientist-posting-munich-468450",
+   "company_name": "Differential.bio",
+   "title": "Machine Learning Data Scientist posting",
+   "description": "<h1><strong>Role summary:</strong></h1><p style=\"min-height:1.5em\">At Differential Bio, our mission is to unlock the potential of the bioeconomy by fixing how biological R&amp;D and scale-up are done.</p><p style=\"min-height:1.5em\">We’re looking for a <strong>Machine Learning Data Scientist</strong>",
+   "remote": false,
+   "url": "https://www.arbeitnow.com/jobs/companies/differentialbio/machine-learning-data-scientist-posting-munich-468450",
+   "tags": [
+    "Research & Development"
+   ],
+   "job_types": [
+    "Full Time"
+   ],
+   "location": "Munich",
+   "created_at": 1793742026
+  }
+ ],
+ "links": {
+  "first": "https://www.arbeitnow.com/api/job-board-api?page=1",
+  "last": null,
+  "prev": null,
+  "next": "https://www.arbeitnow.com/api/job-board-api?page=2"
+ },
+ "meta": {
+  "current_page": 1,
+  "current_page_url": "https://www.arbeitnow.com/api/job-board-api?page=1",
+  "from": 1,
+  "path": "https://www.arbeitnow.com/api/job-board-api",
+  "per_page": 300,
+  "to": 300,
+  "terms": "This is a free public API for jobs, please do not abuse. I would appreciate linking back to the site. By using the API, you agree to the terms of service present on Arbeitnow.com",
+  "info": "Jobs are updated every hour and order by the `created_at` timestamp. Use `?page=` to paginate. Read more information here: https://www.arbeitnow.com/blog/job-board-api"
+ }
+}

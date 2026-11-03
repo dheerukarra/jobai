@@ -1,0 +1,46 @@
+{
+ "exhaustive": {
+  "nbHits": true,
+  "typo": true
+ },
+ "exhaustiveNbHits": true,
+ "exhaustiveTypo": true,
+ "hits": [
+  {
+   "objectID": "50338728",
+   "title": "Ask HN: Who is hiring? (November 2026)",
+   "created_at": "2026-11-02T16:01:37Z",
+   "author": "whoishiring"
+  },
+  {
+   "objectID": "50338726",
+   "title": "Ask HN: Who wants to be hired? (November 2026)",
+   "created_at": "2026-11-02T16:01:37Z",
+   "author": "whoishiring"
+  },
+  {
+   "objectID": "49922569",
+   "title": "Ask HN: Who is hiring? (October 2026)",
+   "created_at": "2026-10-01T15:02:07Z",
+   "author": "whoishiring"
+  }
+ ],
+ "hitsPerPage": 3,
+ "nbHits": 514,
+ "nbPages": 172,
+ "page": 0,
+ "params": "tags=story%2Cauthor_whoishiring&hitsPerPage=3&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 2,
+ "processingTimingsMS": {
+  "_request": {
+   "queue": 456,
+   "roundTrip": 18
+  },
+  "fetch": {
+   "total": 1
+  },
+  "total": 2
+ },
+ "query": "",
+ "serverTimeMS": 459
+}

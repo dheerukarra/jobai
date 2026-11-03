@@ -1,0 +1,60 @@
+{
+ "hits": [
+  {
+   "objectID": "50358182",
+   "parent_id": 50340434,
+   "story_id": 50338728,
+   "author": "snowtoslow",
+   "created_at": "2026-11-03T21:05:46Z",
+   "comment_text": "Hey, interested in the job opportunity, send you an email already, waiting for the challenge"
+  },
+  {
+   "objectID": "50357754",
+   "parent_id": 50338728,
+   "story_id": 50338728,
+   "author": "oliverbaverstam",
+   "created_at": "2026-11-03T20:30:44Z",
+   "comment_text": "Cocient | Software Engineers, Data Scientists, and experts in finance, medicine, law, science and engineering | AI training &amp; evaluation | REMOTE (most countries) | Contract, hourly | <a href=\"https:&#x2F;&#x2F;work.cocient.com&#x2F;opportunities\" rel=\"nofollow\">https:&#x2F;&#x2F;work.cocient.com&#x2F;opportunities</a><p>Cocient is a human data and AI training platform. We contract experienced professionals to produce evals and training data for AI labs: writing hard, realistic problems in your field, grading model answers, and pinning down where a model&#x27;s reasoning breaks.<p>Pay by field, depending on experience: software engineering $70-150&#x2F;hr, data science $60-130&#x2F;hr, f"
+  },
+  {
+   "objectID": "50357728",
+   "parent_id": 50338728,
+   "story_id": 50338728,
+   "author": "joping_apollo",
+   "created_at": "2026-11-03T20:28:49Z",
+   "comment_text": "Apollo Research | Coding agent security product<p>1. Founding Account Executive: moves security champion&#x27;s interest through the org to closing, run technical evaluations with FDE, writes the playbook for next hires. 5+ years in GTM with five- and six-figure ACV technical deals closed into security or engineering orgs that did not have a marketing or sales engine.  Apply here: <a href=\"https:&#x2F;&#x2F;jobs.lever.co&#x2F;apolloresearch&#x2F;008a594d-0b50-4f15-be9d-ad0a44767cb3\" rel=\"nofollow\">https:&#x2F;&#x2F;jobs.lever.co&#x2F;apolloresearch&#x2F;008a594d-0b50-4f15-be9d...</a><p>2. GTM Associate: builds the pipeline engine and qualified pipeline.2+ years generating demand without a pl"
+  },
+  {
+   "objectID": "50357688",
+   "parent_id": 50351346,
+   "story_id": 50338728,
+   "author": "lordnacho",
+   "created_at": "2026-11-03T20:25:30Z",
+   "comment_text": "Also, don&#x27;t email anyone at the company directly, thanks."
+  },
+  {
+   "objectID": "50356058",
+   "parent_id": 50338728,
+   "story_id": 50338728,
+   "author": "Estuary",
+   "created_at": "2026-11-03T18:28:39Z",
+   "comment_text": "Estuary | US-Based &#x2F; Remote | Full-time – <a href=\"https:&#x2F;&#x2F;estuary.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;estuary.dev&#x2F;</a><p>Estuary is a VC-backed, post–Series A startup powering real-time data replication and transform — from sub-second CDC replication to terabyte-scale OLAP data flows. We’re open-source, developer-first, and focused on making data movement radically simpler across both our Platform and Applications layers.<p>We’re hiring for:<p>Head of Engineering — Own the engineering function end-to-end as a partner to our founder CTO: strategy, people, delivery, and operations across a compact but high-leverage team. You’ll grow the leaders already running our "
+  },
+  {
+   "objectID": "50355834",
+   "parent_id": 50338728,
+   "story_id": 50338728,
+   "author": "lulicaffarini",
+   "created_at": "2026-11-03T18:15:08Z",
+   "comment_text": "Tether | Product Engineering Lead, Keet | REMOTE (Worldwide)\nWe&#x27;re looking for a Product Engineering Lead to help build and scale Keet, a fully peer-to-peer messaging and video calling app.\nYou&#x27;ll lead API and frontend engineering teams, working closely with Product to turn the roadmap into high-quality features.\nWe&#x27;re looking for someone with:\n- Experience leading engineering teams building consumer products.\n- Strong JavaScript and React skills.\n- Solid product sense and technical leadership.\n- Understanding of distributed, local-first or P2P systems.\nApply: <a href=\"https:&#x2F;&#x2F;tether.recruitee.com&#x2F;o&#x2F;product-engineering-lead-keet-100-remote-worldwide-12\" rel"
+  },
+  {
+   "objectID": "50354142",
+   "parent_id": 50338728,
+   "story_id": 50338728,
+   "author": "nialbima",
+   "created_at": "2026-11-03T16:32:52Z",
+   "comment_text": "Exponent | Lead Engineer, AI Accounting | New York (Flatiron) | HYBRID, 2+ days in office | $160k–$200k + equity | Full-time<p>Exponent is a financial platform for franchise and multi-location restaurant operators: charge cards, loans, and an AI-powered Accountant that pulls in an operator&#x27;s POS, bank, payroll and processor data, reconciles it, and automates the monthly close.<p>You&#x27;d own core systems in the Accountant: idempotent ingestion from unreliable third-party APIs, the background jobs that keep thousands of accounts in sync, and the decisions about how LLM classification behaves inside a ledger that has to be right. Full stack, focused on backend architecture. Rails, Postg"
+  }
+ ]
+}

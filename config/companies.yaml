@@ -1,0 +1,20 @@
+# Owner-editable board list. Every entry must be a real, public ATS board slug.
+# Check with: uv run python -m jobai discover verify
+# ats: greenhouse | lever | ashby
+companies:
+  - {name: Stripe, ats: greenhouse, slug: stripe}
+  - {name: Airbnb, ats: greenhouse, slug: airbnb}
+  - {name: Cloudflare, ats: greenhouse, slug: cloudflare}
+  - {name: Discord, ats: greenhouse, slug: discord}
+  - {name: Databricks, ats: greenhouse, slug: databricks}
+  - {name: Palantir, ats: lever, slug: palantir}
+  - {name: Spotify, ats: lever, slug: spotify}
+  - {name: Binance, ats: lever, slug: binance}
+  - {name: Outreach, ats: lever, slug: outreach}
+  - {name: Zoox, ats: lever, slug: zoox}
+  - {name: Ramp, ats: ashby, slug: ramp}
+  - {name: Notion, ats: ashby, slug: notion}
+  - {name: OpenAI, ats: ashby, slug: openai}
+  - {name: Linear, ats: ashby, slug: linear}
+  - {name: PostHog, ats: ashby, slug: posthog}
+  - {name: Supabase, ats: ashby, slug: supabase}

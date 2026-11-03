@@ -24,8 +24,8 @@ Owner (you): scope, keys, which ATS goes live, daily caps
 Execs and managers are real roles with charters but run as **short review passes per sprint** (one cheap agent pass each), not as always-on agents. ICs do the work. This keeps Claude usage under the 50% weekly rule.
 
 ## Rules (from the delivery plan)
-1. Gate before every WP: `get_usage`; start only if weekly% + estimate <= 40 and 5-hour% <= 60. Hard stop at 45%/48%.
-2. At most 2 agents at once. Default model Haiku; Sonnet only for submit scripts, tailoring prompts, entity diff, route decision, the LLM gateway.
+1. Gate before every WP: `get_usage`; start only if weekly% + estimate <= 40. Hard stop at 45%/48% weekly. The 5-hour window has no cap (owner decision 2026-11-04); it is informational.
+2. Up to 3 agents at once when file ownership is disjoint. Default model Haiku; Sonnet only for submit scripts, tailoring prompts, entity diff, route decision, the LLM gateway.
 3. Brief each agent in <= 1.5k tokens and name <= 3 files to read.
 4. **Graphify rule goes in every code-exploring agent prompt:** when `graphify-out/graph.json` exists, run `graphify query "<question>"` before the first grep or source read; after changing code run `graphify update .`. The `graphify` binary is `C:\Users\dheer\.local\bin\graphify.exe`.
 5. Agents do not commit. The Chief of Staff commits after verification.

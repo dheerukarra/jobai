@@ -1,50 +1,39 @@
-"""Command line for the office dashboard: `python -m jobai.office build|serve`.
+"""Command line for the office dashboard: `python -m jobai.office build|serve|up`.
 
-New project file for ticket OFF-1. Callers: jobai.office.__main__.
+New project file for ticket OFF-1 (edited for OFF-2: live server and `up`). Callers:
+jobai.office.__main__.
 """
 
 from __future__ import annotations
 
 import argparse
-import contextlib
 import time
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import webbrowser
 from pathlib import Path
 
 from .render import build
+from .server import DEFAULT_PORT, serve, start_detached
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[3]
-
-
-def _handler(root: Path) -> type[BaseHTTPRequestHandler]:
-    class Handler(BaseHTTPRequestHandler):
-        def do_GET(self) -> None:
-            if self.path.split("?")[0] not in ("/", "/index.html"):
-                self.send_error(404)
-                return
-            body = build(root).read_bytes()  # rebuild on every request
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
-
-        def log_message(self, format: str, *args: object) -> None:
-            return
-
-    return Handler
 
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="python -m jobai.office", description=__doc__)
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name, helptext in (("build", "write dashboard/index.html"), ("serve", "serve it locally")):
+    helps = {
+        "build": "write dashboard/index.html once",
+        "serve": "run the live server in the foreground",
+        "up": "start the live server in the background if needed, then open the browser",
+    }
+    for name, helptext in helps.items():
         sp = sub.add_parser(name, help=helptext)
         sp.add_argument("--root", type=Path, default=DEFAULT_ROOT, help="project root")
         if name == "build":
             sp.add_argument("--out", type=Path, default=None, help="output file")
         else:
-            sp.add_argument("--port", type=int, default=8765)
+            sp.add_argument("--port", type=int, default=DEFAULT_PORT)
+        if name == "up":
+            sp.add_argument("--no-browser", action="store_true", help="do not open a browser")
     args = p.parse_args(argv)
     root: Path = args.root.resolve()
     if args.cmd == "build":
@@ -52,8 +41,13 @@ def main(argv: list[str] | None = None) -> int:
         path = build(root, args.out)
         print(f"wrote {path} ({path.stat().st_size} bytes, {time.perf_counter() - start:.3f}s)")
         return 0
-    server = HTTPServer(("127.0.0.1", args.port), _handler(root))
-    print(f"serving http://127.0.0.1:{args.port}/ (rebuilds on each request; Ctrl+C to stop)")
-    with contextlib.suppress(KeyboardInterrupt):
-        server.serve_forever()
+    if args.cmd == "serve":
+        return serve(root, args.port)
+    url = f"http://127.0.0.1:{args.port}/"
+    if not start_detached(root, args.port):
+        print(f"could not start the dashboard on port {args.port} (is another program using it?)")
+        return 1
+    print(f"dashboard is live at {url}")
+    if not args.no_browser:
+        webbrowser.open(url)
     return 0

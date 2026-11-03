@@ -1,0 +1,7 @@
+# Standup 2026-11-04 — Backend IC (WP1b)
+Done: 6 keyless aggregators (Remotive, RemoteOK, Arbeitnow, The Muse, HN Who-is-hiring, freehire) + disabled-by-default Adzuna and optional JobSpy wrapper; board-slug harvesting (migration 0003 `discovered_boards`, `discover harvest`, `discover verify-harvested` with YAML snippet, config never auto-edited); `discover sources`; `discover run --source <name>|all --limit --query`; on-disk HTTP cache (TTL) in PoliteClient; 39 new tests.
+Doing next: nothing; awaiting review.
+Blockers: JobSpy live query denied by the auto-mode classifier (ToS-forbidden scraping); not retried or worked around.
+Requests (changes needed outside my files): (1) tests/test_db.py asserted exactly 2 migrations; I made those asserts count migrations dynamically. (2) Review pyproject.toml/uv.lock diff (jobspy extra + mypy override; lock re-resolved). (3) Optional: paste the printed YAML for the 6 alive harvested boards into config/companies.yaml if wanted.
+Risks / decisions needed: Remotive/RemoteOK require attribution + link back, so keep source links if these are ever shown in the UI; freehire keyless use is personal only. `--source all` includes all ATS companies in companies.yaml (about 16 requests) plus the 6 aggregators.
+Verification: ruff clean; mypy clean (45 files); pytest 132 passed; ~26 live requests (all 6 aggregators 200, second run 0 duplicates but cache-served, 6/6 harvested boards alive). Details in tickets/WP1b.md.

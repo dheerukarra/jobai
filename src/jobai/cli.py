@@ -61,5 +61,8 @@ def main(argv: list[str] | None = None) -> int:
     sm = sub.add_parser("llm-smoke")
     sm.add_argument("--yes", action="store_true")
     sm.set_defaults(fn=_cmd_smoke)
+    from jobai.discovery.cli import add_discover_parser
+
+    add_discover_parser(sub)
     args = p.parse_args(argv)
     return int(args.fn(args))

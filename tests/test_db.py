@@ -7,10 +7,11 @@ from jobai import db
 
 def test_migrations_idempotent(tmp_path):
     c = db.connect(tmp_path / "a.sqlite3")
-    assert db.migrate(c) == ["0001_init"]
+    expected = [p.stem for p in sorted(db.DEFAULT_MIGRATIONS.glob("*.sql"))]
+    assert db.migrate(c) == expected
     assert db.migrate(c) == []
     n = c.execute("SELECT COUNT(*) FROM schema_migrations").fetchone()[0]
-    assert n == 1
+    assert n == len(expected)
     assert c.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
     assert c.execute("PRAGMA foreign_keys").fetchone()[0] == 1
 
@@ -99,7 +100,8 @@ def test_concurrent_migrate_applies_once(tmp_path):
     [t.start() for t in ts]
     [t.join() for t in ts]
     assert errors == []
-    assert sorted(len(r) for r in results) == [0, 0, 0, 0, 0, 1]
+    n_mig = len(list(db.DEFAULT_MIGRATIONS.glob("*.sql")))
+    assert sorted(len(r) for r in results) == [0, 0, 0, 0, 0, n_mig]
 
 
 def test_check_constraints(conn):

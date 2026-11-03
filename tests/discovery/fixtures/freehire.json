@@ -1,0 +1,212 @@
+{
+ "data": [
+  {
+   "public_slug": "python-developer-primo-interactive-limited-b2jjqdis",
+   "source": "whatjobs-uk",
+   "manually_added": false,
+   "external_id": "python developer:601849258",
+   "url": "https://uk.whatjobs.com/pub_api__cpl__601849258__7082?utm_campaign=publisher&utm_medium=api&geoID=1790&utm_source=freehire.me",
+   "title": "Python Developer",
+   "company": "Primo Interactive Limited",
+   "company_slug": "primo-interactive",
+   "location": "Ancoats, United Kingdom",
+   "description": "<p>Most of what we build is PHP, but not all of it. When a client's system is already written in Python, when the job is data processing or automation, or when the library that solves the problem only exists in Python, that is what we use. We pick the language that suits the client's team and their ",
+   "countries": [
+    "gb"
+   ],
+   "regions": [
+    "uk"
+   ],
+   "skills": [
+    "api",
+    "automation",
+    "django",
+    "docker",
+    "fastapi",
+    "flask",
+    "git",
+    "linux",
+    "mysql",
+    "pandas",
+    "php",
+    "postgresql",
+    "python",
+    "sql"
+   ],
+   "cities": [],
+   "metros": [],
+   "collections": [],
+   "perks": [],
+   "engagement": null,
+   "is_tech": "tech",
+   "posted_at": "2026-11-03T14:47:03Z",
+   "created_at": "2026-11-03T14:47:03Z",
+   "updated_at": "2026-11-03T14:47:03Z",
+   "last_seen_at": "2026-11-03T14:47:03Z",
+   "closed_at": null,
+   "enrichment": {
+    "category": "software_engineering"
+   },
+   "enriched_at": null,
+   "enrichment_version": 0,
+   "view_count": 0,
+   "applied_count": 0,
+   "upvote_count": 0,
+   "downvote_count": 0,
+   "my_vote": 0
+  },
+  {
+   "public_slug": "python-fullstack-data-engineer-base-camp-digital-gnxkv6lt",
+   "source": "whatjobs-sg",
+   "manually_added": false,
+   "external_id": "data engineer:94399459",
+   "url": "https://en-sg.whatjobs.com/pub_api__cpl__94399459__7119?utm_campaign=publisher&utm_medium=api&geoID=1&utm_source=freehire.me",
+   "title": "Python Fullstack Data Engineer",
+   "company": "Base Camp Digital",
+   "company_slug": "base-camp-digital",
+   "location": "Singapore, Singapore",
+   "description": "<b>Project Description</b><p>You'll keep the Platform AI - Recommender service running reliably, securely and in line with compliance requirements. We are a shared recommendation service that powers personalised suggestions for jobs, courses, careers and learning content across publicâ€‘sector produ",
+   "countries": [
+    "sg"
+   ],
+   "regions": [
+    "apac"
+   ],
+   "skills": [
+    "agentic-ai",
+    "ai",
+    "airflow",
+    "api",
+    "aws",
+    "cloud",
+    "data-pipelines",
+    "data-quality",
+    "databricks",
+    "docker",
+    "kubernetes",
+    "llm",
+    "machine-learning",
+    "pyspark",
+    "python",
+    "spark",
+    "sql"
+   ],
+   "cities": [
+    "Singapore"
+   ],
+   "metros": [
+    "Singapore (SG)"
+   ],
+   "collections": [],
+   "perks": [],
+   "engagement": null,
+   "is_tech": "tech",
+   "posted_at": "2026-11-03T14:41:23Z",
+   "created_at": "2026-11-03T14:41:23Z",
+   "updated_at": "2026-11-03T14:41:23Z",
+   "last_seen_at": "2026-11-03T14:41:23Z",
+   "closed_at": null,
+   "enrichment": {
+    "category": "fullstack"
+   },
+   "enriched_at": null,
+   "enrichment_version": 0,
+   "view_count": 0,
+   "applied_count": 0,
+   "upvote_count": 0,
+   "downvote_count": 0,
+   "my_vote": 0
+  },
+  {
+   "public_slug": "python-developer-application-security-quantum-infotech-solutions-skk4ev3q",
+   "source": "whatjobs-sg",
+   "manually_added": false,
+   "external_id": "python developer:94423514",
+   "url": "https://en-sg.whatjobs.com/pub_api__cpl__94423514__7119?utm_campaign=publisher&utm_medium=api&geoID=1&utm_source=freehire.me",
+   "title": "Python Developer (Application Security)",
+   "company": "Quantum Infotech Solutions",
+   "company_slug": "quantum-infotech-solutions",
+   "location": "Singapore, Singapore",
+   "description": "<ul><li>Design, develop, and maintain secure applications using Python.</li><li>Implement secure coding practices to prevent common application vulnerabilities.</li><li>Identify, analyze, and remediate security vulnerabilities in Python-based applications.</li><li>Perform application security assess",
+   "countries": [
+    "sg"
+   ],
+   "regions": [
+    "apac"
+   ],
+   "skills": [
+    "angular",
+    "api",
+    "api-security",
+    "authentication",
+    "automation",
+    "aws",
+    "azure",
+    "burp-suite",
+    "ci-cd",
+    "cloud",
+    "cloud-security",
+    "dast",
+    "devops",
+    "devsecops",
+    "django",
+    "docker",
+    "fastapi",
+    "flask",
+    "gcp",
+    "git",
+    "iso-27001",
+    "jwt",
+    "kubernetes",
+    "linux",
+    "oauth",
+    "openid",
+    "owasp",
+    "pci-dss",
+    "python",
+    "rest",
+    "risk-assessment",
+    "sast",
+    "secrets-management",
+    "secure-coding",
+    "snyk",
+    "soc-2",
+    "sonarqube",
+    "sql",
+    "threat-modeling",
+    "tls",
+    "typescript"
+   ],
+   "cities": [
+    "Singapore"
+   ],
+   "metros": [
+    "Singapore (SG)"
+   ],
+   "collections": [],
+   "perks": [],
+   "engagement": null,
+   "is_tech": "tech",
+   "posted_at": "2026-11-03T14:40:29Z",
+   "created_at": "2026-11-03T14:40:29Z",
+   "updated_at": "2026-11-03T14:40:29Z",
+   "last_seen_at": "2026-11-03T14:40:29Z",
+   "closed_at": null,
+   "enrichment": {
+    "category": "security"
+   },
+   "enriched_at": null,
+   "enrichment_version": 0,
+   "view_count": 0,
+   "applied_count": 0,
+   "upvote_count": 0,
+   "downvote_count": 0,
+   "my_vote": 0
+  }
+ ],
+ "meta": {
+  "limit": 5,
+  "offset": 0,
+  "total": 53164
+ }
+}

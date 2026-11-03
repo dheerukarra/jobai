@@ -1,19 +1,21 @@
 """Assemble the single-file dashboard (inline CSS + JS + JSON data). Stdlib only.
 
-New project file for ticket OFF-1. Callers: jobai.office.cli. Data schema: the dict from
-jobai.office.parser.parse_office.
+New project file for ticket OFF-1 (edited for OFF-2). Callers: jobai.office.cli and
+jobai.office.server. Data schema: the dict from jobai.office.state.build_state.
 """
 
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
+import os
 from pathlib import Path
 from typing import Any
 
-from .parser import parse_office
+from .state import build_state
 
 TEMPLATES = Path(__file__).parent / "templates"
+# Concatenated into ONE script closure (app.js opens it, live.js closes it).
+JS_PARTS = ("app.js", "views.js", "live.js")
 
 
 def _safe_json(data: dict[str, Any]) -> str:
@@ -31,7 +33,7 @@ def _safe_json(data: dict[str, Any]) -> str:
 def render_html(data: dict[str, Any]) -> str:
     html = (TEMPLATES / "index.html").read_text(encoding="utf-8")
     css = (TEMPLATES / "style.css").read_text(encoding="utf-8")
-    js = (TEMPLATES / "app.js").read_text(encoding="utf-8")
+    js = "\n".join((TEMPLATES / n).read_text(encoding="utf-8") for n in JS_PARTS)
     title = f"{data.get('project', 'Project')} dashboard"
     # Order matters: the data goes in last so user text can never be re-substituted.
     html = html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js)
@@ -40,10 +42,10 @@ def render_html(data: dict[str, Any]) -> str:
 
 
 def build(root: Path, out: Path | None = None) -> Path:
-    """Parse docs/office under root and write dashboard/index.html. Returns the path."""
-    stamp = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
-    data = parse_office(root, stamp)
+    """Parse the project under root and write dashboard/index.html atomically. Returns the path."""
     target = out or root / "dashboard" / "index.html"
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(render_html(data), encoding="utf-8")
+    tmp = target.with_name(target.name + ".tmp")
+    tmp.write_text(render_html(build_state(root)), encoding="utf-8")
+    os.replace(tmp, target)
     return target

@@ -1,0 +1,67 @@
+{
+ "00-warning": "Remotive main domain moved to remotive.com ! Please make you",
+ "0-legal-notice": "Legal warning - Hey, thanks for using Remotive's API, we appreciate it! Please note that API documentation and access is granted so that developers can share our jobs further. Please do not submit Rem",
+ "job-count": 10,
+ "total-job-count": 10,
+ "jobs": [
+  {
+   "id": 2091165,
+   "url": "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
+   "title": "Full-Stack Developer",
+   "company_name": "Fluence International, Inc.",
+   "company_logo": "https://remotive.com/job/2091165/logo",
+   "category": "Software Development",
+   "tags": [
+    "admin",
+    "api",
+    "AWS",
+    "backend"
+   ],
+   "job_type": "contract",
+   "publication_date": "2026-10-29T18:22:41",
+   "candidate_required_location": "Worldwide",
+   "salary": "$3.5k–$5k/month",
+   "description": "<p dir=\"ltr\" style=\"line-height: 1.3800000000000001; margin-top: 12pt; margin-bottom: 12pt;\"><span style=\"color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">We’re looking "
+  },
+  {
+   "id": 2091135,
+   "url": "https://remotive.com/remote-jobs/software-development/senior-back-end-developer-2091135",
+   "title": "Senior Back-end Developer",
+   "company_name": "Lemon.io",
+   "company_logo": "https://remotive.com/job/2091135/logo",
+   "category": "Software Development",
+   "tags": [
+    ".Net",
+    "android",
+    "C",
+    "C#"
+   ],
+   "job_type": "full_time",
+   "publication_date": "2026-10-27T12:56:13",
+   "candidate_required_location": "Europe, USA, Canada, Australia, Singapore, Mexico, Saudi Arabia",
+   "salary": "",
+   "description": "<p><a href=\"https://lemon.io/for-developers/?utm_source=remotive&amp;utm_medium=job_ad&amp;utm_campaign=supply_en_gpu_backend_oct_2026_job_ad\" rel=\"nofollow\" target=\"_self\">Lemon.io</a> helps companies in the US and Europe hire experienced engineers, from funded startups to teams like Klarna, Retool",
+   "company_logo_url": "https://remotive.com/job/2091135/logo"
+  },
+  {
+   "id": 2091134,
+   "url": "https://remotive.com/remote-jobs/software-development/head-of-engineering-2091134",
+   "title": "Head of Engineering",
+   "company_name": "Lemon.io",
+   "company_logo": "https://remotive.com/job/2091134/logo",
+   "category": "Software Development",
+   "tags": [
+    "AI/ML",
+    "startup",
+    "marketplace",
+    "fundraising"
+   ],
+   "job_type": "full_time",
+   "publication_date": "2026-10-26T12:20:09",
+   "candidate_required_location": "Worldwide",
+   "salary": "",
+   "description": "<p><a class=\"_container_j2da7_1\" href=\"https://jobs.ashbyhq.com/lemon-io/4dc7dd66-686c-4a07-82cc-a1a8448d34c6/application\" rel=\"nofollow\" style=\"box-sizing: border-box; background-color: rgba(0, 0, 0, 0); touch-action: manipulation; color: inherit; text-decoration: none;   font-style: normal; font-v",
+   "company_logo_url": "https://remotive.com/job/2091134/logo"
+  }
+ ]
+}

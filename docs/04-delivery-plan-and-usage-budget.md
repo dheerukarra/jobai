@@ -12,10 +12,10 @@ Running the finished app never touches the Claude Code weekly limit.
 
 ## 2. Usage control protocol (strict)
 Unit = **points** = percentage points of the weekly all-models limit. Estimates below are guesses (+/-50%) until calibrated.
-1. **Gate before every work package (WP):** call `get_usage`. Start only if `weekly% + WP estimate <= 40` AND `5-hour% <= 60` (or the WP is < 1 point). Otherwise defer to the next window.
+1. **Gate before every work package (WP):** call `get_usage`. Start only if `weekly% + WP estimate <= 40`; otherwise defer until the weekly window resets. **Owner clarification (2026-11-04): there is NO limit on the 5-hour window; the 50% rule applies strictly to the weekly limit.** The 5-hour percentage is shown for information only. If the platform itself pauses work at the 5-hour limit, resume after its reset; to make that safe, agents leave their ticket Activity log and standup updated as they go so nothing is lost mid-task.
 2. **Hard stops:** weekly >= 45% -> launch nothing new, finish the in-flight agent, write a handoff note. Weekly >= 48% -> stop everything now.
 3. **Ledger:** after each WP append to `docs/office/budget-ledger.md`: WP id, estimate, measured weekly% before/after, agents, model tier. After WP0 recalibrate every estimate by the measured ratio.
-4. **Concurrency <= 2 agents.** Parallel agents burn the 5-hour window fastest.
+4. **Concurrency:** up to 3 agents at once when their file ownership is disjoint (the earlier limit of 2 existed only to protect the 5-hour window, which is no longer a constraint). Parallelism does not change weekly cost, so the weekly gate still applies to the sum of running estimates.
 5. **Cheap by default:** Haiku for scaffolding, tests, docs, fixtures, reviews; Sonnet only for submit scripts, tailoring prompts, entity diff, route decision. No agent re-reads the full doc set: each brief is <= 1.5k tokens and names <= 3 files to read.
 6. **No research repeats.** Research is done; agents get the decisions below, not the reports.
 7. **Idle costs nothing.** If a gate fails, stop and say when the window resets; resume then (can be automated with a scheduled wake-up if the owner wants).

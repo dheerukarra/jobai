@@ -14,9 +14,14 @@
     <h1 id="proj">Project</h1>
     <p id="goal" class="muted"></p>
   </div>
-  <p id="stamp" class="muted small"></p>
+  <div class="status">
+    <p id="live" class="live" role="status">Connecting</p>
+    <p id="stamp" class="muted small"></p>
+    <p id="gitline" class="muted small"></p>
+  </div>
 </header>
 <div id="banner" role="alert" hidden></div>
+<div id="stale" class="stale" role="status" hidden></div>
 <div id="warnings" hidden></div>
 <nav aria-label="Dashboard sections">
   <div id="tabs" role="tablist"></div>
@@ -30,7 +35,7 @@
   </div>
   <div id="drawer-body"></div>
 </aside>
-<noscript><p class="warn-box">This dashboard needs JavaScript to display. It makes no network calls.</p></noscript>
+<noscript><p class="warn-box">This dashboard needs JavaScript to display. It only talks to the local dashboard server on this computer.</p></noscript>
 <script id="data" type="application/json">__DATA__</script>
 <script>/*__JS__*/</script>
 </body>

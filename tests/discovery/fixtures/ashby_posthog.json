@@ -1,0 +1,71 @@
+{
+ "jobs": [
+  {
+   "id": "db808740-242e-4a40-ad43-d41f26c049d7",
+   "title": " Technical Support Engineer",
+   "department": "Support Engineering",
+   "team": "Support Engineering",
+   "employmentType": "FullTime",
+   "location": "Remote",
+   "secondaryLocations": [],
+   "publishedAt": "2026-10-28T14:43:56.854+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Remote",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "US | EU"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/posthog/db808740-242e-4a40-ad43-d41f26c049d7",
+   "applyUrl": "https://jobs.ashbyhq.com/posthog/db808740-242e-4a40-ad43-d41f26c049d7/application",
+   "descriptionHtml": "<h2>About PostHog</h2><p style=\"min-height:1.5em\">PostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.</p><p style=\"min-height:1.5em\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://posthog.com/handbook/story\"><u>We launched out of Y Combinator's W20 cohort</u></a>. We've since shipped more than a dozen products, including:</p><ul style=\"min-height:1.5em\"><li><p style=",
+   "descriptionPlain": "ABOUT POSTHOG\n\nPostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.\n\nWe launched out of Y Combinator's W20 cohort https://posthog.com/handbook/story. We've since shipped more than a dozen products, including:\n\n - A suite of analytics and observability tools, including product analytics https://posthog.com/product-analytics, replay vision https://posthog.com/replay-vision, AI observability"
+  },
+  {
+   "id": "0be1b52c-2401-4ae2-b7fc-5d018c1ff96f",
+   "title": "Technical Customer Success Manager - EMEA",
+   "department": "Sales & Customer Success",
+   "team": "Customer Success",
+   "employmentType": "FullTime",
+   "location": "Remote (EMEA)",
+   "secondaryLocations": [],
+   "publishedAt": "2026-09-18T08:41:19.683+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Remote",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "European Union"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/posthog/0be1b52c-2401-4ae2-b7fc-5d018c1ff96f",
+   "applyUrl": "https://jobs.ashbyhq.com/posthog/0be1b52c-2401-4ae2-b7fc-5d018c1ff96f/application",
+   "descriptionHtml": "<h2>About PostHog</h2><p style=\"min-height:1.5em\">PostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.</p><p style=\"min-height:1.5em\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://posthog.com/handbook/story\"><u>We launched out of Y Combinator's W20 cohort</u></a>. We've since shipped more than a dozen products, including:</p><ul style=\"min-height:1.5em\"><li><p style=",
+   "descriptionPlain": "ABOUT POSTHOG\n\nPostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.\n\nWe launched out of Y Combinator's W20 cohort https://posthog.com/handbook/story. We've since shipped more than a dozen products, including:\n\n - A suite of analytics and observability tools, including product analytics https://posthog.com/product-analytics, replay vision https://posthog.com/replay-vision, AI observability"
+  },
+  {
+   "id": "20ab9628-20ff-4ae3-bd6a-46ae7e9dc6b8",
+   "title": "Product Engineer",
+   "department": "Engineering",
+   "team": "Product Engineering",
+   "employmentType": "FullTime",
+   "location": "Remote",
+   "secondaryLocations": [],
+   "publishedAt": "2026-09-24T16:56:29.377+00:00",
+   "isListed": true,
+   "isRemote": true,
+   "workplaceType": "Remote",
+   "address": {
+    "postalAddress": {
+     "addressCountry": "USA"
+    }
+   },
+   "jobUrl": "https://jobs.ashbyhq.com/posthog/20ab9628-20ff-4ae3-bd6a-46ae7e9dc6b8",
+   "applyUrl": "https://jobs.ashbyhq.com/posthog/20ab9628-20ff-4ae3-bd6a-46ae7e9dc6b8/application",
+   "descriptionHtml": "<h2>About PostHog</h2><p style=\"min-height:1.5em\">PostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.</p><p style=\"min-height:1.5em\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://posthog.com/handbook/story\"><u>We launched out of Y Combinator's W20 cohort</u></a>. We've since shipped more than a dozen products, including:</p><ul style=\"min-height:1.5em\"><li><p style=",
+   "descriptionPlain": "ABOUT POSTHOG\n\nPostHog is your product\u2019s context layer. It ingests and stores your analytics, errors, replays, and business data so you and your agents can query and act on it.\n\nWe launched out of Y Combinator's W20 cohort https://posthog.com/handbook/story. We've since shipped more than a dozen products, including:\n\n - A suite of analytics and observability tools, including product analytics https://posthog.com/product-analytics, replay vision https://posthog.com/replay-vision, AI observability"
+  }
+ ],
+ "apiVersion": "1"
+}

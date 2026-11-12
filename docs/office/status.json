@@ -3,10 +3,10 @@
   "project": "JobAi",
   "sprint": {"name": "Sprint 1", "goal": "Foundation, tooling and project dashboard, then discovery (WP1)", "start": "2026-11-03"},
   "usage": {
-    "weekly_pct": 9,
+    "weekly_pct": 20,
     "weekly_cap_plan_pct": 40,
     "weekly_cap_hard_pct": 50,
-    "five_hour_pct": 64,
+    "five_hour_pct": 72,
     "weekly_resets": "2026-11-08T10:59:59Z",
     "five_hour_resets": "2026-11-04T01:59:59Z",
     "openai_balance_usd": 9.79,
@@ -19,6 +19,7 @@
     {"id": "backend-ic-fixes", "name": "backend-ic-fixes", "role": "Backend IC", "model": "sonnet", "ticket": "WP0", "status": "done", "note": "Fixed P1s: 44 tests"},
     {"id": "web-ic", "name": "web-ic", "role": "Web IC", "model": "sonnet", "ticket": "OFF-1", "status": "done", "note": "Built this dashboard: 54 tests total"},
     {"id": "backend-ic-wp1a", "name": "backend-ic-wp1a", "role": "Backend IC", "model": "sonnet", "ticket": "WP1", "status": "done", "note": "WP1a: 79 tests, 1,427 real jobs stored, no duplicates"},
+    {"id": "backend-ic-wp1c", "name": "backend-ic-wp1c", "role": "Backend IC", "model": "sonnet", "ticket": "WP1c", "status": "done", "note": "WP1c: Workable, SmartRecruiters, Recruitee live; 30 verified seeds; freshness checks; 146 tests"},
     {"id": "backend-ic-wp1b", "name": "backend-ic-wp1b", "role": "Backend IC", "model": "sonnet", "ticket": "WP1b", "status": "done", "note": "WP1b: 8 live sources, 1,607 jobs, board harvesting; 132 tests"},
     {"id": "web-ic-off2", "name": "web-ic-off2", "role": "Web IC", "model": "sonnet", "ticket": "OFF-2", "status": "done", "note": "Live dashboard: self-updating, active-now badges, 93 tests total"}
   ],

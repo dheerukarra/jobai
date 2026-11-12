@@ -9,8 +9,9 @@ Owner: Chief of Staff. Estimates are weekly-limit points (see plan section 4). S
 | WP1 | Discovery: ATS fetchers, aggregators, freehire API, JobSpy, dedupe (WP1a core + 3 ATS DONE and verified: 79 tests, 1,427 real jobs; WP1b aggregators next) | Platform EM / Backend IC | 5 | DONE (WP1a + WP1b verified: 132 tests, 1,607 real jobs from 8 live sources) | tickets/WP1.md |
 | WP1b | Discovery sources: Remotive, RemoteOK, Arbeitnow, The Muse, HN, freehire API, optional JobSpy (live JobSpy query not run: blocked by classifier), board-slug harvesting | Platform EM / Backend IC | 2.5 | DONE | tickets/WP1b.md |
 | OFF-2 | Live dashboard: auto-update on every change, show in-progress work from file activity | Experience EM / Web IC | 1.5 | DONE (93 tests; server at 127.0.0.1:8765 updates within ~3 s) | tickets/OFF-2.md |
-| WP2 | Profile, filters, answers bank, fit scoring, caps | Platform EM / Backend IC | 3 | TODO | — |
-| WP3 | Tailoring: RenderCV, entity-diff guard, PDF, cover note | Applier EM / Backend IC | 5 | TODO | — |
+| WP1c | More job sources: port selected career-ops providers (Workable, SmartRecruiters, Recruitee, BambooHR, Breezy, big-company APIs), bigger seed list, freshness checks | Platform EM / Backend IC | 2.5 | DONE (146 tests; 8 new+old ATS sources, 5 added, 3 live-verified; 30 verified seeds; 1,770 jobs) | tickets/WP1c.md |
+| WP2 | Profile, filters, answers bank, fit scoring (1-5 with discard reasons, evaluation cache, golden-set calibration, visa/sponsorship filter) | Platform EM / Backend IC | 3.5 | TODO | — |
+| WP3 | Tailoring: entity-diff guard (titles, dates, employers, degrees), CV PDF (compare career-ops HTML templates + Playwright vs RenderCV), cover note | Applier EM / Backend IC | 5 | TODO | — |
 | WP4 | Route decision + Playwright submit (Greenhouse, Lever), wall detection, dry-run | Applier EM / Automation IC | 8 | TODO | — |
 | WP5 | Assisted queue, ntfy, dashboard, kill switch | Experience EM / Web IC | 6 | TODO | — |
 | WP6 | Deploy (Oracle/Hetzner), backups, health, runbook | Platform EM / DevOps IC | 3 | TODO | — |

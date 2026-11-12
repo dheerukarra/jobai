@@ -1,0 +1,166 @@
+{
+ "offset": 0,
+ "limit": 100,
+ "totalFound": 123,
+ "content": [
+  {
+   "id": "744000161322320",
+   "name": "Head of Solution Engineering, Americas",
+   "uuid": "8f91c3aa-65a2-4ba4-a6cc-6dfc2155f12c",
+   "jobAdId": "ed1ea91f-6fd6-492d-bfc6-f39dc4a450c5",
+   "defaultJobAd": true,
+   "refNumber": "P-1002433_1",
+   "company": {
+    "identifier": "Freshworks",
+    "name": "Freshworks"
+   },
+   "releasedDate": "2026-11-12T15:06:44.777Z",
+   "location": {
+    "city": "San Mateo",
+    "region": "CA",
+    "country": "us",
+    "postalCode": "94403",
+    "remote": false,
+    "hybrid": true,
+    "hybridDescription": "Tu-Th In-office (M/F WFH)",
+    "fullLocation": "San Mateo, CA, United States"
+   },
+   "industry": {
+    "id": "it_and_services",
+    "label": "Information Technology And Services"
+   },
+   "department": {},
+   "function": {
+    "id": "other",
+    "label": "Other"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "director",
+    "label": "Director"
+   },
+   "customField": [
+    {
+     "fieldId": "618bba30fa9dfa25d877c58b",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Freshworks"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/freshworks/postings/744000161322320",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  },
+  {
+   "id": "744000161316490",
+   "name": "Lead - Solution Engineer",
+   "uuid": "431007f6-74d6-4df6-97bb-eb27f6ece8d1",
+   "jobAdId": "c75a311a-06b5-4033-84dd-b7992b62b548",
+   "defaultJobAd": false,
+   "refNumber": "P102927",
+   "company": {
+    "identifier": "Freshworks",
+    "name": "Freshworks"
+   },
+   "releasedDate": "2026-11-12T14:44:47.151Z",
+   "location": {
+    "city": "Berlin",
+    "country": "de",
+    "remote": true,
+    "hybrid": false,
+    "fullLocation": "Berlin, , Germany"
+   },
+   "industry": {
+    "id": "it_and_services",
+    "label": "Information Technology And Services"
+   },
+   "department": {},
+   "function": {
+    "id": "other",
+    "label": "Other"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "mid_senior_level",
+    "label": "Mid-Senior Level"
+   },
+   "customField": [
+    {
+     "fieldId": "618bba30fa9dfa25d877c58b",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Freshworks"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/freshworks/postings/744000161316490",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  },
+  {
+   "id": "744000161276930",
+   "name": "Senior Manager - Sales (Expansion) (m/f/d)",
+   "uuid": "a466353f-db8e-464f-bab9-9f2615a0d3fc",
+   "jobAdId": "30aea9a0-fedb-4219-8167-d2f50bcd65e5",
+   "defaultJobAd": true,
+   "refNumber": "P103298",
+   "company": {
+    "identifier": "Freshworks",
+    "name": "Freshworks"
+   },
+   "releasedDate": "2026-11-12T11:34:59.662Z",
+   "location": {
+    "city": "Berlin",
+    "country": "de",
+    "remote": true,
+    "hybrid": false,
+    "fullLocation": "Berlin, , Germany"
+   },
+   "industry": {
+    "id": "it_and_services",
+    "label": "Information Technology And Services"
+   },
+   "department": {},
+   "function": {
+    "id": "other",
+    "label": "Other"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "mid_senior_level",
+    "label": "Mid-Senior Level"
+   },
+   "customField": [
+    {
+     "fieldId": "618bba30fa9dfa25d877c58b",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "Freshworks"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/freshworks/postings/744000161276930",
+   "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+   }
+  }
+ ]
+}

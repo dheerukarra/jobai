@@ -1,6 +1,6 @@
 # Owner-editable board list. Every entry must be a real, public ATS board slug.
 # Check with: uv run python -m jobai discover verify
-# ats: greenhouse | lever | ashby
+# ats: greenhouse | lever | ashby | workable | smartrecruiters | recruitee | (bamboohr, breezy: disabled)
 companies:
   - {name: Stripe, ats: greenhouse, slug: stripe}
   - {name: Airbnb, ats: greenhouse, slug: airbnb}
@@ -18,3 +18,35 @@ companies:
   - {name: Linear, ats: ashby, slug: linear}
   - {name: PostHog, ats: ashby, slug: posthog}
   - {name: Supabase, ats: ashby, slug: supabase}
+
+  # added from career-ops seeds (verified 2026-11-12)
+  - {name: Tinybird, ats: lever, slug: tinybird}
+  - {name: Pigment, ats: lever, slug: pigment}
+  - {name: Hotjar, ats: lever, slug: contentsquare}
+  - {name: Semios, ats: workable, slug: semios}
+  - {name: Anthropic, ats: greenhouse, slug: anthropic}
+  - {name: PolyAI, ats: greenhouse, slug: polyai}
+  - {name: Intercom, ats: greenhouse, slug: intercom}
+  - {name: Hume AI, ats: greenhouse, slug: humeai}
+  - {name: Airtable, ats: greenhouse, slug: airtable}
+  - {name: Vercel, ats: greenhouse, slug: vercel}
+  - {name: Arize AI, ats: greenhouse, slug: arizeai}
+  - {name: Weights & Biases (CoreWeave), ats: greenhouse, slug: coreweave}
+  - {name: Glean, ats: greenhouse, slug: gleanwork}
+  - {name: Ada, ats: greenhouse, slug: ada18}
+  - {name: Speechmatics, ats: greenhouse, slug: speechmatics}
+  - {name: ElevenLabs, ats: ashby, slug: elevenlabs}
+  - {name: Deepgram, ats: ashby, slug: deepgram}
+  - {name: Vapi, ats: ashby, slug: vapi}
+  - {name: Bland AI, ats: ashby, slug: bland}
+  - {name: Temporal, ats: ashby, slug: temporal}
+  - {name: RunPod, ats: ashby, slug: runpod}
+  - {name: Sierra, ats: ashby, slug: sierra}
+  - {name: Decagon, ats: ashby, slug: decagon}
+  - {name: n8n, ats: ashby, slug: n8n}
+  - {name: Zapier, ats: ashby, slug: zapier}
+  - {name: Cohere, ats: ashby, slug: cohere}
+  - {name: LangChain, ats: ashby, slug: langchain}
+  - {name: Hugging Face, ats: workable, slug: huggingface}
+  - {name: Channable, ats: recruitee, slug: channable}
+  - {name: Freshworks, ats: smartrecruiters, slug: freshworks}

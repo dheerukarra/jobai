@@ -9,10 +9,18 @@ from pathlib import Path
 from jobai import db
 from jobai.config import get_settings
 from jobai.discovery import boards as boards_mod
+from jobai.discovery import health as health_mod
 from jobai.discovery import runner
 from jobai.discovery.http import PoliteClient
 from jobai.discovery.models import Aggregator, Target
-from jobai.discovery.sources import AGGREGATORS, NOT_IMPLEMENTED, SOURCES, agg_status
+from jobai.discovery.sources import (
+    AGGREGATORS,
+    DISABLED_ATS,
+    NOT_IMPLEMENTED,
+    SOURCES,
+    agg_status,
+    ats_status,
+)
 from jobai.discovery.sources.freehire import FreehireSource
 from jobai.discovery.sources.jobspy_source import WARNING as JOBSPY_WARNING
 from jobai.discovery.store import Store
@@ -69,11 +77,20 @@ def _cmd_run(args: argparse.Namespace) -> int:
     try:
         if src is None or src == "all" or src in SOURCES:
             targets = _targets(args)
+            if src in DISABLED_ATS:
+                print(f"note: {src} is disabled: {DISABLED_ATS[src]}")
             s = runner.run(
                 store, client, targets, SOURCES,
                 source=None if src in (None, "all") else src,
                 max_companies=args.max_companies, boards=boards,
+                health=health_mod.BoardHealth(conn), disabled_ats=DISABLED_ATS,
+                retry_dead=args.retry_dead,
             )
+            for label, items in (("skipped dead", s.skipped_dead),
+                                 ("skipped disabled", s.skipped_disabled),
+                                 ("newly dead", s.newly_dead)):
+                if items:
+                    print(f"{label} ({len(items)}): {', '.join(items)}")
             print(
                 f"companies={s.companies} fetched={s.fetched} inserted={s.inserted} "
                 f"updated={s.updated} aliases={s.aliases} boards_new={s.boards_found} "
@@ -113,7 +130,9 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
 def _cmd_sources(args: argparse.Namespace) -> int:
     for n in sorted(SOURCES):
-        print(f"{n:<10} ATS board   enabled   needs companies in {args.companies}")
+        ok, why = ats_status(n)
+        note = f"needs companies in {args.companies}" if ok else why
+        print(f"{n:<15} ATS board   {'enabled ' if ok else 'DISABLED'}  {note}")
     for n, sp in AGGREGATORS.items():
         ok, why = agg_status(n)
         print(f"{n:<10} aggregator {'enabled ' if ok else 'DISABLED'}  {why}"
@@ -172,6 +191,16 @@ def _cmd_stats(_: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_health(args: argparse.Namespace) -> int:
+    r = health_mod.BoardHealth(_open_conn()).report(args.stale_days)
+    print(f"dead boards: {len(r.dead_boards)} (skipped by `discover run`; --retry-dead re-checks)")
+    for ats, slug, at, detail in r.dead_boards:
+        print(f"  {ats:<15} {slug:<28} {at} {detail}")
+    print(f"stale jobs (not seen for {r.stale_days}d, still open): {r.stale_jobs}")
+    print(f"possible reposts (same company+title, new id, recorded as alias): {r.possible_reposts}")
+    return 0
+
+
 def _cmd_stale(args: argparse.Namespace) -> int:
     print(f"closed {_open_store().mark_stale(args.days)} stale jobs (not seen for {args.days}d)")
     return 0
@@ -190,6 +219,7 @@ def add_discover_parser(sub: "argparse._SubParsersAction[argparse.ArgumentParser
     r.add_argument("--max-companies", type=int)
     r.add_argument("--limit", type=int, default=50, help="max postings per aggregator")
     r.add_argument("--query", help="search text (freehire only)")
+    r.add_argument("--retry-dead", action="store_true", help="re-check boards marked dead")
     r.set_defaults(fn=_cmd_run)
     v = ds.add_parser("verify")
     common(v)
@@ -206,6 +236,9 @@ def add_discover_parser(sub: "argparse._SubParsersAction[argparse.ArgumentParser
     vh.add_argument("--max", type=int, default=10, help="max boards to check this run")
     vh.set_defaults(fn=_cmd_verify_harvested)
     ds.add_parser("stats").set_defaults(fn=_cmd_stats)
+    hl = ds.add_parser("health", help="dead boards, stale jobs, possible reposts")
+    hl.add_argument("--stale-days", type=int, default=14)
+    hl.set_defaults(fn=_cmd_health)
     m = ds.add_parser("mark-stale")
     m.add_argument("--days", type=int, required=True)
     m.set_defaults(fn=_cmd_stale)

@@ -10,6 +10,7 @@ from jobai.discovery.dedupe import canonical_key, canonical_url, fingerprint, no
 from jobai.discovery.models import JobPosting
 
 Clock = Callable[[], datetime]
+REPOST_DAYS = 30
 
 
 def _utcnow() -> datetime:
@@ -37,8 +38,38 @@ class Store:
         )
         return int(cur.lastrowid or 0)
 
-    def upsert(self, p: JobPosting) -> str:
-        """Returns 'inserted', 'updated' or 'alias'."""
+    def _known_alias(self, p: JobPosting) -> sqlite3.Row | None:
+        row: sqlite3.Row | None = self._conn.execute(
+            "SELECT job_id AS id FROM job_aliases WHERE source=? AND external_id=?",
+            (p.source, p.external_id),
+        ).fetchone()
+        return row
+
+    def _repost_of(
+        self, p: JobPosting, key: str, live_ids: frozenset[str] | None, ts: str
+    ) -> sqlite3.Row | None:
+        """Same source+company+title, other external_id, seen within REPOST_DAYS and no longer
+        on the board (not in live_ids): the new id is a repost, recorded as an alias (WP1c)."""
+        if live_ids is None:
+            return None
+        now = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        cutoff = _iso(now - timedelta(days=REPOST_DAYS))
+        rows = self._conn.execute(
+            "SELECT id, external_id FROM jobs WHERE source=? AND company_slug=? "
+            "AND lower(trim(title))=lower(trim(?)) AND canonical_key<>? AND last_seen_at>=? "
+            "ORDER BY id",
+            (p.source, p.company_slug, p.title, key, cutoff),
+        ).fetchall()
+        for r in rows:
+            if r["external_id"] not in live_ids:
+                found: sqlite3.Row = r
+                return found
+        return None
+
+    def upsert(self, p: JobPosting, live_ids: frozenset[str] | None = None) -> str:
+        """Returns 'inserted', 'updated' or 'alias'.
+
+        live_ids: external_ids currently on the same board (enables repost detection)."""
         ts = _iso(self._now())
         key = canonical_key(p.ats, p.company_slug, p.external_id)
         url = canonical_url(p.url)
@@ -61,10 +92,12 @@ class Store:
                 )
                 result = "updated"
             else:
-                twin = c.execute(
-                    "SELECT id FROM jobs WHERE fingerprint=? AND source<>? ORDER BY id LIMIT 1",
-                    (fp, p.source),
-                ).fetchone()
+                twin = self._known_alias(p) or self._repost_of(p, key, live_ids, ts)
+                if twin is None:
+                    twin = c.execute(
+                        "SELECT id FROM jobs WHERE fingerprint=? AND source<>? ORDER BY id LIMIT 1",
+                        (fp, p.source),
+                    ).fetchone()
                 if twin:
                     c.execute(
                         "INSERT INTO job_aliases(job_id, source, external_id, url, "

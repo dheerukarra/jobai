@@ -8,6 +8,7 @@ from typing import Any
 import yaml
 
 from jobai.discovery.boards import BoardStore
+from jobai.discovery.health import BoardHealth, is_dead_error
 from jobai.discovery.http import PoliteClient
 from jobai.discovery.models import Aggregator, FetchError, JobPosting, Source, Target
 from jobai.discovery.store import Store
@@ -45,14 +46,21 @@ class RunSummary:
     aliases: int = 0
     errors: list[str] = field(default_factory=list)
     boards_found: int = 0
+    skipped_dead: list[str] = field(default_factory=list)
+    newly_dead: list[str] = field(default_factory=list)
+    skipped_disabled: list[str] = field(default_factory=list)
 
 
 def _ingest(
-    store: Store, summary: "RunSummary", postings: list[JobPosting], boards: BoardStore | None
+    store: Store,
+    summary: "RunSummary",
+    postings: list[JobPosting],
+    boards: BoardStore | None,
+    live_ids: frozenset[str] | None = None,
 ) -> None:
     for p in postings:
         summary.fetched += 1
-        outcome = store.upsert(p)
+        outcome = store.upsert(p, live_ids)
         if boards is not None:
             summary.boards_found += boards.record(p.source, p.url, p.apply_url, p.description_text)
         if outcome == "inserted":
@@ -72,19 +80,39 @@ def run(
     source: str | None = None,
     max_companies: int | None = None,
     boards: BoardStore | None = None,
+    health: BoardHealth | None = None,
+    disabled_ats: Mapping[str, str] | None = None,
+    retry_dead: bool = False,
 ) -> RunSummary:
-    chosen = [t for t in targets if source is None or t.ats == source]
+    """Fetch each board. Boards verified dead are skipped (unless retry_dead); ATSs listed in
+    disabled_ats are skipped unless named explicitly via `source` (WP1c)."""
+    summary = RunSummary()
+    dead = health.dead_set() if health is not None and not retry_dead else set()
+    chosen: list[Target] = []
+    for t in targets:
+        if source is not None and t.ats != source:
+            continue
+        if source is None and disabled_ats and t.ats in disabled_ats:
+            summary.skipped_disabled.append(f"{t.ats}/{t.slug}")
+        elif (t.ats, t.slug.lower()) in dead:
+            summary.skipped_dead.append(f"{t.ats}/{t.slug}")
+        else:
+            chosen.append(t)
     if max_companies is not None:
         chosen = chosen[: max(max_companies, 0)]
-    summary = RunSummary()
     for t in chosen:
         summary.companies += 1
         try:
             postings = list(sources[t.ats](client).fetch(t))
         except FetchError as e:
             summary.errors.append(f"{t.ats}/{t.slug}: {e}")
+            if health is not None and is_dead_error(e):
+                health.mark_dead(t.ats, t.slug, str(e))
+                summary.newly_dead.append(f"{t.ats}/{t.slug}")
             continue
-        _ingest(store, summary, postings, boards)
+        if health is not None:
+            health.mark_ok(t.ats, t.slug)
+        _ingest(store, summary, postings, boards, frozenset(p.external_id for p in postings))
     return summary
 
 

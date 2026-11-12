@@ -1,5 +1,6 @@
 """Small parsing helpers shared by ATS adapters (new WP1a file)."""
 
+import re
 from datetime import UTC, datetime
 from typing import Any
 
@@ -48,3 +49,25 @@ def epoch_seconds(value: Any) -> datetime | None:
         return datetime.fromtimestamp(int(value), tz=UTC)
     except (TypeError, ValueError, OverflowError, OSError):
         return None
+
+
+_SLUG_OK = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$")
+
+
+def safe_slug(slug: str, ats: str) -> str:
+    """Board slugs end up in URLs/hostnames: allow only plain tokens (WP1c)."""
+    if not _SLUG_OK.match(slug or ""):
+        from jobai.discovery.models import FetchError
+
+        raise FetchError(f"invalid {ats} board slug {slug!r}")
+    return slug
+
+
+def join_location(*parts: Any) -> str | None:
+    """Join non-empty location parts, skipping case-insensitive repeats (WP1c)."""
+    seen: list[str] = []
+    for p in parts:
+        s = str(p).strip() if p else ""
+        if s and s.lower() not in (x.lower() for x in seen):
+            seen.append(s)
+    return ", ".join(seen) or None
